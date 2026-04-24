@@ -1,0 +1,40 @@
+@import '@styles/variable.module.scss';
+@import '@styles/mixin.module.scss';
+
+.container {
+    background-color: $primary_color;
+    margin-top: -75px; //đẩy lên trên banner cùng 1 thuộc tính trong styles homepage
+    padding: 20px 50px;
+
+    @include flex_box_custom(
+        space-between,
+        center,
+        0px
+    ); //cho nằm ngang, giãn cách sát lề
+}
+
+.containerCard {
+    @include flex_box_custom(center, center, 18px);
+
+    width: 280px;
+    height: 104px;
+}
+
+.containerContent {
+    //thuộc tính aligt-item là flex để căn từ điểm bắt đầu
+    @include flex_box_custom(center, flex-start, 13px);
+
+    flex-direction: column; //căn theo chiều dọc
+    font-weight: 400;
+
+    //viết kiểu scss thì theo thứ tự cha con
+    .title {
+        font-size: 17px;
+        color: $white_color;
+    }
+
+    .des {
+        font-size: 16px;
+        color: rgb(213, 213, 213);
+    }
+}

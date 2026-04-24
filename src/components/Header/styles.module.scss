@@ -1,0 +1,74 @@
+@import '@styles/mixin.module.scss';
+@import '@styles/variable.module.scss';
+
+// cái thằng to
+.container {
+    @include flex_box_custom(center, center, 0px);
+    // banner tự động đẩy lên trên ăn sát
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.containerHeader {
+    width: 1250px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; //cách đều 2 bên
+    height: 83px;
+}
+
+// css cho icon nằm ngang
+.containerBoxIcon {
+    @include flex_box_custom(center, center, 10px);
+}
+// menu ngang
+.containerMenu {
+    @include flex_box_custom(center, center, 40px);
+}
+
+// cả 2 khối ngang
+.containerBox {
+    @include flex_box_custom(center, center, 20px);
+}
+
+.boxIcon {
+    @include radius_common(50%);
+    @include flex_box_custom(center, center, 0px);
+    background-color: $primary_color;
+    width: 26px;
+    height: 26px;
+}
+
+// menu thẳng với icon
+.menu {
+    cursor: pointer;
+    padding-top: 9px;
+    font-size: 15px;
+    color: $primary_color;
+}
+
+// có thể hover được thanh công cụ, sử dụng lớp giả gạch chân
+.menu::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: $primary_color;
+    margin-top: 6px;
+
+    transform-origin: right;
+    transform: scale(0);
+    // trượt hết từ phải sang sẽ mất dần đi về 0
+    opacity: 0;
+    transition:
+        transform 300ms,
+        opacity 300ms;
+}
+
+.menu:hover::after {
+    // khi hover vào thì ở đây phải rõ 1
+    opacity: 1;
+    transform: scale(1);
+}

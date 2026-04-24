@@ -1,0 +1,33 @@
+@import '@styles/mixin.module.scss';
+@import '@styles/variable.module.scss';
+
+.container {
+    @include flex_box_custom(center, center, 0px); //phần nd ra giữa
+
+    background-image: url(../../assets/icons/images/Banner.jpeg);
+    min-height: 750px;
+    // ko lặp lại ảnh
+    background-repeat: no-repeat;
+    // ảnh fix vơi khung
+    background-size: cover;
+    background-position: center;
+}
+
+// phần nd của banner
+.content {
+    @include flex_box_custom(center, center, 10px); //phần nd ra giữa
+    flex-direction: column; //căn theo cột
+}
+
+.title {
+    font-size: 42px;
+    color: $thr_color;
+    font-weight: 400;
+    margin: 15px 0;
+}
+
+.des {
+    color: $thr_color;
+    font-weight: 400;
+    margin-bottom: 25px;
+}
