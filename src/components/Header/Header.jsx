@@ -2,7 +2,7 @@ import BoxIcon from './BoxIcon/BoxIcon';
 import Menu from './Menu/Menu';
 import { dataBoxIcon, dataMenu } from './constants';
 import styles from './styles.module.scss';
-import Logo from '@icons/images/Logo-retina.png';
+import Logo from '@icons/images/logo.png';
 import reloadIcon from '@icons/svgs/reloadIcon.svg';
 import heartIcon from '@icons/svgs/heartIcon.svg';
 import cartIcon from '@icons/svgs/cartIcon.svg';

@@ -6,23 +6,23 @@ import debitCartIcon from '@icons/svgs/debitCartIcon.svg';
 //data
 export const dataInfo = [
     {
-        title: 'Fastest Shipping',
-        description: 'Order at $39 order',
+        title: 'Giao hàng nhanh',
+        description: 'Nhận laptop tận nơi',
         src: truckIcon
     },
     {
-        title: '100% Safe Payments',
-        description: '9 month installments',
+        title: 'Thanh toán an toàn',
+        description: 'Trả góp 9 tháng',
         src: debitCartIcon
     },
     {
-        title: '14-Days Return',
-        description: 'Shop with confidence',
+        title: '14-Ngày Trả Hàng',
+        description: 'Kiểm tra sản phẩm dễ dàng',
         src: boxIcon
     },
     {
-        title: '24/7 Online Support',
-        description: 'Delivered to home',
+        title: 'Hỗ trợ trực tuyến 24/7',
+        description: 'Tư vấn và giải đáp nhanh',
         src: chatIcon
     }
 ];

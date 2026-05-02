@@ -6,12 +6,9 @@ function Banner() {
     return (
         <div className={container}>
             <div className={content}>
-                <h1 className={title}>XStore Marseille04 Demo</h1>
-                <div className={des}>
-                    Make yours celebrations even more special this years with
-                    beautiful.
-                </div>
-                <Button content={'Go to shop'} />
+                <h1 className={title}>BetaTech</h1>
+                <div className={des}>Khám phá laptop phù hợp với bạn.</div>
+                <Button content={'Khám phá ngay'} />
             </div>
         </div>
     );

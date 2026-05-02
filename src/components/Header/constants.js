@@ -7,12 +7,12 @@ const dataBoxIcon = [
 ];
 
 const dataMenu = [
-    { content: 'Elements', href: '#' },
-    { content: 'Our Shop', href: '#' },
-    { content: 'About us', href: '#' },
-    { content: 'Contacts', href: '#' },
-    { content: 'Search', href: '#' },
-    { content: 'Sign in', href: '#' }
+    { content: 'Sản phẩm', href: '#' },
+    { content: 'Cửa hàng', href: '#' },
+    { content: 'Giới thiệu', href: '#' },
+    { content: 'Liên hệ', href: '#' },
+    { content: 'Tìm kiếm', href: '#' },
+    { content: 'Đăng nhập', href: '#' }
 ];
 
 export { dataBoxIcon, dataMenu };

@@ -4,7 +4,7 @@
 .container {
     @include flex_box_custom(center, center, 0px); //phần nd ra giữa
 
-    background-image: url(../../assets/icons/images/Banner.jpeg);
+    background-image: url(../../assets/icons/images/banner.png);
     min-height: 750px;
     // ko lặp lại ảnh
     background-repeat: no-repeat;
