@@ -7,6 +7,7 @@ import { useEffect } from 'react';
 import { getProducts } from '@/apis/productsService';
 import PopularProduct from '@components/PopularProduct/PopularProduct';
 import { useState } from 'react';
+import SaleHomepage from '@components/SaleHomepage/SaleHomepage';
 
 // chứa tất cả trang web
 function HomePage() {
@@ -40,6 +41,8 @@ function HomePage() {
 
             {/* từ 2 đến hết */}
             <PopularProduct data={listProducts.slice(2, listProducts.length)} />
+
+            <SaleHomepage />
             <div
                 style={{
                     height: '200px'
