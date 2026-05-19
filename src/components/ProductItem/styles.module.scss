@@ -1,16 +1,37 @@
 @import '@styles/mixin.module.scss';
 @import '@styles/variable.module.scss';
 
-.boxImg {
-    width: 300px;
-    height: 100%;
-    position: relative; //cha
+/* Thẻ SP: full width trong ô lưới — chuẩn layout TMĐT */
+.card {
+    position: relative;
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+}
 
-    //đang ăn theo thẻ cha
+.boxImg {
+    position: relative;
+    z-index: 0;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    background: #f4f4f4;
+    border-radius: 4px;
+
+    /* Vùng bấm vào ảnh (dưới nút giỏ/yêu thích) */
+    .imageHit {
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        text-indent: -9999px;
+    }
+
     img {
         width: 100%;
         height: 100%;
         object-fit: cover;
+        object-position: center;
+        display: block;
     }
 
     //khi hover ảnh mới bật ảnh 2
@@ -38,6 +59,7 @@
 
     .showFncWhenHover {
         position: absolute;
+        z-index: 2;
         opacity: 0;
         bottom: 20px;
         right: 0px;
@@ -61,14 +83,29 @@
     }
 }
 
+.metaLink {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    &:hover .title {
+        color: $primary_color;
+    }
+}
+
 .title {
-    font-size: 16px;
+    font-size: 15px;
     color: $four_color;
-    margin: 6px 0px;
+    margin: 12px 0 4px;
+    line-height: 1.35;
+    min-height: 2.7em;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 .priceCl {
-    font-size: 14px;
+    font-size: 15px;
     color: $thr_color;
-    font-weight: 400;
+    font-weight: 600;
 }

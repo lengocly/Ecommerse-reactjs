@@ -29,6 +29,7 @@
 // menu ngang
 .containerMenu {
     @include flex_box_custom(center, center, 40px);
+    overflow: visible;
 }
 
 // cả 2 khối ngang
@@ -50,6 +51,7 @@
     padding-top: 9px;
     font-size: 15px;
     color: $primary_color;
+    text-decoration: none;
 }
 
 // có thể hover được thanh công cụ, sử dụng lớp giả gạch chân
@@ -94,4 +96,52 @@
         83px
     ); //khi scroll xuống thì header sẽ trượt xuống vị trí ban đầu
     transition: transform 0.7s ease; // hiệu ứng trượt mượt mà khi scroll xuống
+}
+
+
+.menuDropdownWrap {
+    position: relative;
+    padding-top: 9px;
+
+    &:hover .menuDropdown {
+        display: flex;
+    }
+}
+
+.menuDropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    flex-direction: row;
+    min-width: 320px;
+    padding: 16px 20px;
+    background: #fff;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    border-radius: 4px;
+    gap: 24px;
+}
+
+.menuGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 140px;
+}
+
+.menuGroupTitle {
+    font-size: 14px;
+    font-weight: 600;
+    color: $primary_color;
+}
+
+.menuChildLink {
+    font-size: 14px;
+    color: #333;
+    text-decoration: none;
+
+    &:hover {
+        color: $primary_color;
+    }
 }

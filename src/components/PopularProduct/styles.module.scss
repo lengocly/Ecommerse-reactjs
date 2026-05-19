@@ -2,12 +2,10 @@
 @import '@styles/mixin.module.scss';
 
 .container {
-    @include flex_box_custom(
-        space-between,
-        center,
-        10px
-    ); //trục x bám sát lề trái và lề phải
-
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 24px 16px;
     margin-top: 10px;
-    flex-wrap: wrap; //khi mà đủ sp sẽ xuống dòng
+    align-items: start;
+    justify-items: stretch;
 }

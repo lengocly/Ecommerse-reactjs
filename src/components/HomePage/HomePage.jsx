@@ -1,3 +1,22 @@
+/**
+ * =============================================================================
+ * NHIỆM VỤ FILE NÀY (HomePage)
+ * =============================================================================
+ * - Đây là TRANG CHỦ: ghép header, banner, danh sách sản phẩm, footer.
+ *
+ * state listProducts:
+ * - useState([]): ban đầu chưa có dữ liệu; sau khi API trả về sẽ cập nhật mảng sản phẩm.
+ *
+ * useEffect(..., []):
+ * - Chạy MỘT LẦN sau khi component mount (lần đầu hiển thị trang).
+ * - Bên trong gọi getProducts(): lấy dữ liệu từ backend, rồi setListProducts(res.contents).
+ *
+ * slice(0, 2) và slice(2):
+ * - Chia mảng: 2 sản phẩm đầu cho khối Countdown + grid nhỏ; còn lại cho PopularProduct.
+ *
+ * Luồng dữ liệu: MySQL → Laravel API → getProducts → listProducts → ProductItem.
+ * =============================================================================
+ */
 import MyHeader from '@components/Header/Header';
 import Banner from '@components/Banner/Banner';
 import AdvanceHeadling from '@components/AdvanceHeadling/AdvanceHeadling';
@@ -10,23 +29,14 @@ import { useState } from 'react';
 import SaleHomepage from '@components/SaleHomepage/SaleHomepage';
 import MyFooter from '@components/Footer/Footer';
 
-// chứa tất cả trang web
 function HomePage() {
-    //tạo ra const để lưu giá trị
-    const [listProducts, setListProducts] = useState([]); //giá trị khởi tạo là mảng rỗng
+    const [listProducts, setListProducts] = useState([]);
 
-    // call api
     useEffect(() => {
-        //dữ liệu từ hàm getProduct của productService trả về
         getProducts().then((res) => {
             setListProducts(res.contents);
-            //console.log(res);
-        }); //.then là lấy ra dữ liệu vì đang trạng thái promis
+        });
     }, []);
-
-    //console.log(listProducts, 'listProducts');
-
-    //đầu tiên chạy sẽ là mảng rỗng sau đó thực thi đến call back của useEffect và call API, thành công sử dụng setListProducts để ném cục DAta từ API đó vào trong listProducts để lưu trữ thì khi đấy ffc sẽ đc render lại và nhận đc dữ liệu consolog mà dl set vào còn useEffect sẽ ko chạy lần nào nữa bởi vì đang mảng rỗng
 
     return (
         <>

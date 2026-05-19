@@ -11,6 +11,7 @@ import { useEffect, useState } from 'react';
 import classNames from 'classnames';
 import { useContext } from 'react';
 import { SideBarContext } from '@/contexts/SideBarProvider';
+import ProductsMenu from './ProductsMenu/ProductsMenu';
 
 function MyHeader() {
     // cho icon nằm ngang
@@ -71,18 +72,21 @@ function MyHeader() {
                     </div>
                     {/* lấy data từ constant */}
                     <div className={containerMenu}>
-                        {/* cắt từ vị trí 0-3 của data */}
-                        {dataMenu.slice(0, 3).map((item) => {
-                            return (
-                                <Menu content={item.content} href={item.href} />
-                            );
-                        })}
+                        <Menu
+                            key={dataMenu[0].content}
+                            content={dataMenu[0].content}
+                            href={dataMenu[0].href}
+                        />
+                        <ProductsMenu />
+                        {dataMenu.slice(1, 3).map((item) => (
+                            <Menu key={item.content} content={item.content} href={item.href} />
+                        ))}
                     </div>
                 </div>
                 <div>
                     <img
                         src={Logo}
-                        alt='Logo'
+                        alt="Logo"
                         style={{ width: '153px', height: '53px' }}
                     />
                 </div>

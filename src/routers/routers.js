@@ -9,6 +9,14 @@ const routers = [
     {
         path: '/blog',
         component: lazy(() => import('@components/Blog/Blog'))
+    },
+    {
+        path: '/product/:id',
+        component: lazy(() => import('@components/ProductDetailPage/ProductDetailPage'))
+    },
+    {
+        path: '/danh-muc/:slug',
+        component: lazy(() => import('@components/CategoryPage/CategoryPage'))
     }
 ];
 
